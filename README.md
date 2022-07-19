@@ -49,6 +49,7 @@ Markers have been added to separate test for GET method and for POST method, whi
 
 ## Running solution in VS Code
 Simply by navigating to Tests tab, you can select to run tests one by one, or run all the test in row. Output should be as below:
+
 ![image](https://user-images.githubusercontent.com/105950708/179721481-feef64a0-14d3-4e1a-8aea-320171b87a51.png)
 
 
@@ -57,6 +58,7 @@ It can be also run from Terminal, by calling the following command (also added i
 `pytest -sv --html=report.html --disable-pytest-warnings`
 
 It should produce output similar to one below:
+
 ![image](https://user-images.githubusercontent.com/105950708/179721319-2101ccd6-b75b-4b9d-8ece-28e4841aca4d.png)
 
 

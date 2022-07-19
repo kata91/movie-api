@@ -4,7 +4,8 @@
 This repo contains basic test cases for API testing of following endpoints
 
   [https://developers.themoviedb.org/3/movies/get-top-rated-movies](url)
-  [https://developers.themoviedb.org/3/movies/rate-movie](url)
+ 
+ [https://developers.themoviedb.org/3/movies/rate-movie](url)
 
 API Key has been obtained by following the steps listed at the link: [https://developers.themoviedb.org/3/getting-started](url)
 

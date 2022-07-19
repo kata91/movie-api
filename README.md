@@ -84,6 +84,7 @@ After that step is finished, use following command to start running the tests
 
 `docker run docker-api-tests`
 
+### Test Report
 Finally, to copy generated report from Docker container to a local folder use command
 
 `docker cp <CONTAINER_NAME>:/app/report.html report.html`

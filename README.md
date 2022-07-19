@@ -9,7 +9,7 @@ API Key has been obtained by following the steps listed at the link: [https://de
 
 ## Solution
 Solution was developed and tested using Visual Studio Code. Python 3.10 has been used.
-`api_main.py` contains OS command that kicks off tests from `tests` folder - in our case it is the file `test_movies.py`. 10 basic examples are included in the solution and the base can be expanded by adding other scenarios. Below are examples of one simple API call for GET method which is expected to fail with unathorized status code as we are trying to retrieve movie details but are passing invalid API key
+`api_main.py` contains OS command that kicks off tests from `tests` folder - in our case it is the file `test_movies.py`. 11 basic examples are included in the solution and the base can be expanded by adding other scenarios. Below are examples of one simple API call for GET method which is expected to fail with unathorized status code as we are trying to retrieve movie details but are passing invalid API key
 
 ```{python}
     @pytest.mark.GET_Method
@@ -84,5 +84,7 @@ Finally, to copy generated report from Docker container to a local folder use co
 
 `docker cp <CONTAINER_NAME>:/app/report.html report.html`
 
-<CONTAINER_NAME> is referring to the name of the image (eg. laughing_darwin) and app/report.html is the location where report is saved. Report should be opened in any browser and contains list of executed tests, along with the outcome (passed/failed). Example of one of such files can be found in this repo. Needs to be downloaded locally and opened from browser in order to load in correct format.
+<CONTAINER_NAME> is referring to the name of the image (eg. laughing_darwin) and app/report.html is the location where report is saved. Report should be opened in any browser and contains list of executed tests, along with the outcome (passed/failed). Example of one of such files can be found in this repo. Needs to be downloaded locally and opened from browser in order to load in correct format. Screenshot of an example report below:
+![image](https://user-images.githubusercontent.com/105950708/179739908-9cd2f325-85fa-4929-95e7-b322f5f5cdd6.png)
+
 

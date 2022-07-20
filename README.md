@@ -1,13 +1,17 @@
 # movie-api
+
+## Description
 This repo contains basic test cases for API testing of following endpoints
+
   [https://developers.themoviedb.org/3/movies/get-top-rated-movies](url)
-  [https://developers.themoviedb.org/3/movies/rate-movie](url)
+ 
+ [https://developers.themoviedb.org/3/movies/rate-movie](url)
 
 API Key has been obtained by following the steps listed at the link: [https://developers.themoviedb.org/3/getting-started](url)
 
 ## Solution
 Solution was developed and tested using Visual Studio Code. Python 3.10 has been used.
-`api_main.py` contains OS command that kicks off tests from `tests` folder - in our case it is the file `test_movies.py`. 10 basic examples are included in the solution and the base can be expanded by adding other scenarios. Below are examples of one simple API call for GET method which is expected to fail with unathorized status code as we are trying to retrieve movie details but are passing invalid API key
+`api_main.py` contains OS command that kicks off tests from `tests` folder - in our case it is the file `test_movies.py`. 11 basic examples are included in the solution and the base can be expanded by adding other scenarios. Below are examples of one simple API call for GET method which is expected to fail with unathorized status code as we are trying to retrieve movie details but are passing invalid API key
 
 ```{python}
     @pytest.mark.GET_Method
@@ -45,7 +49,9 @@ Next snippet is an example of attemt to post invalid rating value (only multiple
             assert response.status_code == 400 
 ```
 
-Markers have been added to separate test for GET method and for POST method, which could easen differentiation for potential future CI integration
+Markers have been added to separate test for GET method and for POST method, which could easen differentiation for potential future CI integration.
+
+As already mentioned, not all scenarios have been added due to time limitation - happy to discuss them on call.
 
 ## Running solution in VS Code
 Simply by navigating to Tests tab, you can select to run tests one by one, or run all the test in row. Output should be as below:
@@ -78,9 +84,11 @@ After that step is finished, use following command to start running the tests
 
 `docker run docker-api-tests`
 
+### Test Report
 Finally, to copy generated report from Docker container to a local folder use command
 
 `docker cp <CONTAINER_NAME>:/app/report.html report.html`
 
-<CONTAINER_NAME> is referring to the name of the image (eg. laughing_darwin) and app/report.html is the location where report is saved. Report should be opened in any browser and contains list of executed tests, along with the outcome (passed/failed). Example of one of such files can be found in this repo. Needs to be downloaded locally and opened from browser in order to load in correct format.
+<CONTAINER_NAME> is referring to the name of the image (eg. laughing_darwin) and app/report.html is the location where report is saved. Report should be opened in any browser and contains list of executed tests, along with the outcome (passed/failed). Example of one of such files can be found in this repo. Needs to be downloaded locally and opened from browser in order to load in correct format. Screenshot of an example report below:
+![image](https://user-images.githubusercontent.com/105950708/179739908-9cd2f325-85fa-4929-95e7-b322f5f5cdd6.png)
 

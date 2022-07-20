@@ -120,6 +120,9 @@ class TestMovie(object):
             # If guest session is successfully started - has "success: true" in json response file, try to post rating 
             if str(success) == "True":
                 response = r.post(base_url_rating_valid + valid_key + "&guest_session_id=" + guest_id, valid_rating)
+                with open(jsonReport_location + '\PostRatingAuthorized.json', 'w') as resp:
+                    # Saves json response content in desired location
+                    json.dump(response.json(), resp,  indent=4)
                 # Asserts that rating is successfully posted
                 assert response.status_code == 201
             else:
@@ -150,7 +153,7 @@ class TestMovie(object):
     def test_post_rating_invalid_key(self):    
         guest_session = r.get(base_url_guestSession + valid_key)
         # Saves json response content in desired location
-        with open('test\JsonRespContent\StartGuestSession.json', 'w') as resp:
+        with open(jsonReport_location + '\StartGuestSession.json', 'w') as resp:
             json.dump(guest_session.json(), resp,  indent=4)
             resp.close()
         # Reads saved response content in order to obtain success state and guest session id
